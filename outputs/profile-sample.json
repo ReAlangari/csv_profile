@@ -1,0 +1,168 @@
+{
+  "n_rows": 20,
+  "n_cols": 10,
+  "columns": [
+    {
+      "name": "order_id",
+      "type": "number",
+      "count": 20,
+      "missing": 0,
+      "unique": 20,
+      "min": 1.0,
+      "max": 20.0,
+      "mean": 10.5
+    },
+    {
+      "name": "customer_name",
+      "type": "text",
+      "count": 17,
+      "missing": 3,
+      "unique": 9,
+      "top": [
+        {
+          "value": "Khalid Al Zahrani",
+          "count": 6
+        },
+        {
+          "value": "Abdullah Al Anazi",
+          "count": 2
+        },
+        {
+          "value": "Fahad Al Qahtani",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "count": 16,
+      "missing": 4,
+      "unique": 9,
+      "top": [
+        {
+          "value": "Abha",
+          "count": 5
+        },
+        {
+          "value": "Qassim",
+          "count": 2
+        },
+        {
+          "value": "Riyadh",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "item_name",
+      "type": "text",
+      "count": 18,
+      "missing": 2,
+      "unique": 6,
+      "top": [
+        {
+          "value": "Laptop",
+          "count": 5
+        },
+        {
+          "value": "Keyboard",
+          "count": 4
+        },
+        {
+          "value": "Monitor",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "quantity",
+      "type": "number",
+      "count": 20,
+      "missing": 0,
+      "unique": 3,
+      "min": 1.0,
+      "max": 3.0,
+      "mean": 1.75
+    },
+    {
+      "name": "unit_price_sar",
+      "type": "number",
+      "count": 15,
+      "missing": 5,
+      "unique": 6,
+      "min": 300.0,
+      "max": 3500.0,
+      "mean": 2093.3333333333335
+    },
+    {
+      "name": "total_amount_sar",
+      "type": "number",
+      "count": 17,
+      "missing": 3,
+      "unique": 12,
+      "min": 300.0,
+      "max": 10500.0,
+      "mean": 3564.705882352941
+    },
+    {
+      "name": "payment_method",
+      "type": "text",
+      "count": 17,
+      "missing": 3,
+      "unique": 3,
+      "top": [
+        {
+          "value": "mada",
+          "count": 6
+        },
+        {
+          "value": "apple_pay",
+          "count": 6
+        },
+        {
+          "value": "credit_card",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "order_status",
+      "type": "text",
+      "count": 19,
+      "missing": 1,
+      "unique": 2,
+      "top": [
+        {
+          "value": "pending",
+          "count": 11
+        },
+        {
+          "value": "completed",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "name": "order_date",
+      "type": "text",
+      "count": 16,
+      "missing": 4,
+      "unique": 14,
+      "top": [
+        {
+          "value": "2025-04-27",
+          "count": 2
+        },
+        {
+          "value": "2025-09-01",
+          "count": 2
+        },
+        {
+          "value": "2025-11-25",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
