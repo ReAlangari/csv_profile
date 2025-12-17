@@ -1,24 +1,17 @@
-# Go back to project root
-cd C:\Users\Remaa\sadaia_boot_camp\csv_profiler_1
-
-# Create a proper pyproject.toml
-@"
-[build-system]
-requires = ["setuptools>=61.0"]
+﻿[build-system]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "csv-profiler"
 version = "0.1.0"
 description = "A CSV profiling tool"
-authors = [{name = "Bootcamp Student"}]
+authors = [{name = "ReAlangari"}]
 requires-python = ">=3.8"
 dependencies = [
     "typer[all]>=0.9.0",
     "pandas>=2.0.0",
-    "numpy>=1.24.0",
-    "matplotlib>=3.7.0",
-    "seaborn>=0.12.0"
+    "numpy>=1.24.0"
 ]
 
 [project.scripts]
@@ -26,7 +19,3 @@ csv-profiler = "src.csv_profiler.cli:app"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-"@ | Out-File -FilePath pyproject.toml -Encoding UTF8
-
-# Verify the file
-type pyproject.tomluv pip install -e .
