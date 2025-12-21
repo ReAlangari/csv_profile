@@ -82,17 +82,15 @@ def profile(
     except Exception as e:
         typer.echo(f" Error: {e}")
         raise typer.Exit(code=1)
-
+    
 @app.command()
-def version():
-    """Show the version of CSV Profiler."""
-    from . import __version__
-    typer.echo(f"CSV Profiler v{__version__}")
+def web() -> None:
+    """Launch the Streamlit web interface."""
+    # Get path to app.py relative to this module
+    app_path = Path(__file__).parent / "app.py"
+    typer.echo(f"Starting Streamlit app...")
+    subprocess.run([sys.executable, "-m", "streamlit", "run", str(app_path)])
 
-@app.command()
-def hello(name: str):
-    """Say hello (test command)."""
-    typer.echo(f"Hello {name}!")
 
 if __name__ == "__main__":
     app()

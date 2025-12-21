@@ -1,0 +1,2 @@
+[console_scripts]
+csv-profiler = src.csv_profiler.cli:app

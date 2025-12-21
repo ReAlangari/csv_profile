@@ -1,0 +1,17 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Generated outputs
+outputs/
+
+# Environment variables (secrets)
+.venv
+
+# OS files
+.DS_Store
+Thumbs.db
