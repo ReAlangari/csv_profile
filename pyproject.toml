@@ -1,38 +1,47 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=61.0", "setuptools-scm>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "csv-profiler"
-version = "0.1.0"
-description = "A CSV profiling tool that analyzes and generates reports for CSV files"
+version = "1.0.0"
+authors = [
+    {name = "Reema AlAngari", email = "re.alangari@gamil.com"}
+]
+description = "CSV Profiler - Analyze and profile CSV files"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = {text = "MIT"}
-keywords = ["csv", "profiler", "data", "analysis"]
+keywords = ["csv", "profiler", "data-analysis", "cli"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Utilities",
 ]
+
 dependencies = [
     "typer>=0.9.0",
     "streamlit>=1.28.0",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
-]
-
 [project.scripts]
-csv-profiler = "src.csv_profiler.cli:app"
+csv-profiler = "csv_profiler.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/ReAlangari/csv_profile"
+Repository = "https://github.com/ReAlangari/csv_profile"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["csv_profiler"]
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
