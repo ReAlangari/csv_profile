@@ -17,13 +17,15 @@ app = typer.Typer(help="CSV Profiler CLI Tool")
 def profile(
     file_path: str = typer.Argument(..., help="Path to CSV file"),
     out_dir: str = typer.Option("outputs", "--out-dir", "-o", help="Output directory"),
-    report_name: str = typer.Option("report", "--report-name", "-n", help="Report name")
+    report_name: str = typer.Option("report", "--report-name", "-n", help="Report name"),
+    format: str = typer.Option("both", "--format", "-f", 
+                               help="Output format: json, markdown, or both")
 ):
     """
     Profile a CSV file and generate a report.
     
     Example:
-    python -m csv_profiler.cli profile data/sample.csv --out-dir outputs --report-name my_report
+    python -m csv_profiler.cli profile data/sample.csv --out-dir outputs --report-name my_report --format json
     """
     try:
         # Start timing
@@ -52,20 +54,29 @@ def profile(
         output_path = Path(out_dir)
         output_path.mkdir(parents=True, exist_ok=True)
         
-        # Save reports
-        json_file = output_path / f"{report_name}.json"
-        write_json(profile_data, str(json_file))
+        # Save reports based on format
+        files_saved = []
         
-        md_file = output_path / f"{report_name}.md"
-        write_markdown(profile_data, str(md_file))
+        # Save JSON report
+        if format in ("json", "both"):
+            json_file = output_path / f"{report_name}.json"
+            write_json(profile_data, str(json_file))
+            files_saved.append(f"JSON: {json_file}")
+        
+        # Save Markdown report
+        if format in ("markdown", "md", "both"):
+            md_file = output_path / f"{report_name}.md"
+            write_markdown(profile_data, str(md_file))
+            files_saved.append(f"Markdown: {md_file}")
         
         # Calculate time
         end_time = time.perf_counter()
         elapsed_ms = (end_time - start_time) * 1000
         
         # Show summary
-        typer.echo(f" JSON report saved to: {json_file}")
-        typer.echo(f" Markdown report saved to: {md_file}")
+        for file_info in files_saved:
+            typer.echo(f" ✓ {file_info}")
+        
         typer.echo(f"  Profiling took: {elapsed_ms:.2f}ms")
         
         # Show quick summary

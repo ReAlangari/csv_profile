@@ -1,17 +1,22 @@
-# CSV Profiler
+## Usage
 
-A simple Python tool for profiling CSV files with CLI and web interface.
-
-## Features
-- Generate JSON and Markdown summary reports
-- Analyze CSV structure and data quality
-- Web interface using Streamlit
-- Command-line interface using Typer
-
-## Installation
-
-### Using uv (Recommended)
+### CLI Commands
 ```bash
-# Run directly from GitHub
-uvx git+https://github.com/justRuba/CSV-profiler web
-uvx git+https://github.com/justRuba/CSV-profiler profile data.csv --format both
+# Profile a CSV file (default: both JSON and Markdown)
+csv-profiler profile data/sample.csv
+
+# Profile with custom output directory
+csv-profiler profile data/sample.csv --out-dir my_reports
+
+# Profile with specific format
+csv-profiler profile data/sample.csv --format json
+csv-profiler profile data/sample.csv --format markdown
+
+# Profile with custom report name
+csv-profiler profile data/sample.csv --report-name analysis_report --format both
+
+# All options together
+csv-profiler profile data/sample.csv --out-dir reports --report-name analysis --format both
+
+# Launch web interface
+csv-profiler web
